@@ -1,0 +1,52 @@
+Tipe Instance Amazon EC2
+
+#General purpose instances (Instance tujuan umum)
+Tipe ini memberikan keseimbangan yang baik dari segi sumber daya komputasi, memori, dan jaringan. Selain itu, opsi ini juga dapat digunakan untuk berbagai beban kerja yang beragam seperti server aplikasi web atau repositori kode.
+
+#Compute optimized instances (Instance teroptimasi untuk komputasi)
+Tipe yang satu ini ideal untuk tugas komputasi yang intensif dan berpusat pada prosesor dengan performa tinggi, seperti server game, HPC (high-performance computing/komputasi dengan performa tinggi), atau bahkan pemodelan ilmiah.
+Anda juga bisa menggunakan tipe compute optimized instances untuk beban kerja batch processing yang membutuhkan banyak proses transaksi di satu grup.
+
+#Memory optimized instances (Instance teroptimasi untuk memori)
+Opsi ini didesain untuk memberikan performa tinggi untuk beban kerja yang memproses kumpulan data besar di dalam memori, seperti relasional dan nonrelasional database atau HPC (high-performance computing).
+
+#Accelerated computing instances (Instance terakselerasi untuk komputasi)
+Tipe ini menggunakan perangkat keras akselerator untuk menjalankan beberapa fungsi secara lebih efisien dibandingkan dengan perangkat lunak yang berjalan pada CPU. Contohnya adalah penghitungan bilangan floating-point, pemrosesan grafik, dan data pattern matching (pencocokan pola data).
+
+#Storage optimized instance (Instance teroptimasi untuk penyimpanan)
+Opsi ini didesain untuk beban kerja yang membutuhkan akses read (baca) dan write (tulis) yang tinggi dan berurutan untuk kumpulan data yang besar di penyimpanan lokal.
+
+Contoh beban kerja yang sesuai untuk tipe ini mencakup sistem file terdistribusi, aplikasi data warehousing (gudang data), dan sistem online transaction processing (OLTP) berfrekuensi tinggi.
+Dalam komputasi, istilah input/output operation per second (IOPS) adalah metrik yang mengukur kinerja perangkat penyimpanan. Ini menunjukkan berapa banyak operasi input atau output yang dapat dilakukan oleh perangkat dalam satu detik.
+
+
+AWS memiliki beberapa pilihan penagihan terkait Amazon EC2. Di antaranya adalah:
+
+$On-Demand (Sesuai Permintaan)
+Opsi ini adalah yang paling dikenal, yaitu On-Demand. Anda hanya membayar selama instance berjalan--bisa per jam atau per detik--tergantung pada tipe instance dan sistem operasi yang Anda pilih.
+On-Demand sangat ideal untuk penggunaan jangka pendek, pengembangan dan pengujian aplikasi, serta beban kerja yang tidak dapat diprediksi dan diinterupsi. Selain itu, model harga ini juga biasa digunakan untuk yang baru memulai, menguji beban kerja, sekadar bereksperimen, atau mendapatkan rata-rata dasar pemakaian instance.
+Tak perlu kontrak, komitmen jangka panjang, pembayaran di muka, atau komunikasi dengan AWS sebelumnya untuk menggunakan pilihan penagihan yang satu ini.
+
+$Savings Plans (Rencana Tabungan)
+Savings Plans memungkinkan Anda mengurangi biaya komputasi dengan berkomitmen terhadap jumlah dolar per jam yang keluar dan penggunaan komputasi yang konsisten untuk jangka waktu 1 atau 3 tahun. Setiap penggunaan di luar itu akan dikenakan tarif On-Demand biasa.
+
+Amazon EC2 Auto Scaling
+Amazon EC2 Auto Scaling memudahkan Anda untuk menambah atau menghapus Amazon EC2 instances secara otomatis sesuai kebutuhan. Dengan begitu, Anda dapat membuat aplikasi selalu tersedia.
+Dengan menggunakan Amazon EC2 Auto Scaling, Anda dapat menggunakan dua pendekatan:
+-Dynamic scaling, yaitu merespons terhadap perubahan permintaan.
+-Predictive scaling, yaitu secara otomatis menjadwalkan jumlah Amazon EC2 instances yang tepat berdasarkan prediksi permintaan.
+
+Auto Scaling Group
+Di cloud, komputasi adalah sumber daya yang terprogram sehingga Anda dapat mengambil pendekatan yang lebih fleksibel untuk masalah scaling (penyesuaian kapasitas).
+untuk melakukan scaling, kita perlu mengonfigurasi ukuran dari Auto Scaling group (grup Auto Scaling)--kumpulan Amazon EC2 instance untuk tujuan scaling dan manajemen secara otomatis.
+Untuk mengaturnya, Anda perlu menentukan berbagai jenis konfigurasi:
+
+-Minimum capacity
+Minimum capacity alias kapasitas minimum adalah jumlah Amazon EC2 instance yang diluncurkan segera setelah Anda membuat Auto Scaling group. Ambil contoh kita menentukan minimumnya 1. Ini berarti setidaknya harus ada 1 Amazon EC2 instance yang berjalan setiap saat.
+
+-Desired capacity
+Selain itu, Anda dapat mengisi desired capacity dengan 2 Amazon EC2 instance meskipun aplikasi Anda hanya memerlukan minimal 1 instance untuk dijalankan.
+Catatan: Jika Anda tidak menentukan jumlah desired capacity dalam Auto Scaling group, maka otomatis akan diatur menjadi default ke minimum capacity Anda.
+
+-Maximum capacity
+Konfigurasi ketiga yang dapat Anda atur adalah maximum capacity. Misalnya, Anda dapat mengonfigurasi Auto Scaling group untuk menyesuaikan dengan permintaan yang melonjak namun maksimum hanya untuk 4 Amazon EC2 instance.
