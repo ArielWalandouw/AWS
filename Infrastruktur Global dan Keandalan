@@ -1,0 +1,54 @@
+jika terjadi hal yang tidak diinginkan pada data center tersebut--seperti pemadaman listrik atau bencana alam--semua aplikasi akan down (mati) sekaligus. Bahkan, memiliki dua data center pun tetap tidak cukup baik loh.
+Solusinya adalah Anda membutuhkan high availability (ketersediaan tinggi) dan fault tolerance (toleransi terhadap kesalahan). High availability adalah kemampuan untuk memastikan bahwa sistem selalu bekerja dan dapat diakses dengan waktu henti yang minimal tanpa memerlukan intervensi manusia. Sedangkan fault tolerance berarti sistem masih mampu beroperasi meskipun beberapa komponen mengalami kegagalan.
+
+#AWS Regions
+Di dalam Region, AWS memiliki beberapa data center yang berisi semua sumber daya yang dibutuhkan seperti komputasi, penyimpanan, jaringan, dll.
+Setiap Region tersebut dapat terkoneksi ke Region lain melalui high speed fiber network (jaringan fiber berkecepatan tinggi) yang dikontrol oleh AWS--kita membutuhkannya untuk operasi yang benar-benar global dari satu lokasi ke lokasi lainnya di seluruh dunia.
+Ada 4 faktor bisnis yang menentukan pemilihan suatu Region:
+
+*Compliance (Kepatuhan)
+Sebelum faktor lainnya, Anda harus terlebih dahulu melihat compliance requirement (persyaratan kepatuhan) Anda. Opsi lainnya menjadi tidak penting saat Anda memiliki persyaratan kepatuhan.
+
+*Proximity (Kedekatan)
+Memilih region yang paling dekat dengan basis pelanggan akan membantu Anda untuk mengirimkan konten lebih cepat kepada mereka.
+
+*Feature Availability (Ketersediaan Fitur)
+Adakalanya, Region terdekat mungkin tidak memiliki semua fitur AWS yang Anda inginkan. Namun, AWS terus berinovasi untuk pelanggan. Setiap tahun, AWS merilis ribuan fitur dan produk baru secara spesifik untuk menjawab permintaan dan kebutuhan pelanggan.
+
+*Pricing (Harga)
+Meskipun spesifikasi perangkat keras pada suatu Region setara dengan Region lain, namun beberapa lokasi bisa lebih mahal pengoperasiannya.
+Misal negara Brasil, struktur pajak di sana memiliki tatanan sedemikian rupa sehingga biaya AWS bisa jauh lebih mahal untuk mengoperasikan layanan yang sama persis dibandingkan dengan negara lain. Pengoperasian beban kerja yang sama persis di kota Sao Paulo mungkin bisa 50% lebih mahal daripada di kota Oregon di negara Amerika Serikat.
+Harga dapat ditentukan oleh banyak faktor dan AWS akan transparan mengenai hal tersebut.
+
+
+#Edge Locations
+Amazon CloudFront menggunakan Edge locations di seluruh dunia untuk membantu mempercepat komunikasi dengan pengguna--di mana pun mereka berada.
+Jadi, Edge locations adalah lokasi yang digunakan Amazon CloudFront untuk menyimpan salinan cache dengan jarak yang dekat dengan pelanggan sehingga konten dapat terkirim lebih cepat.
+AWS Edge locations tak hanya berguna untuk menjalankan CloudFront, melainkan juga layanan domain name system (DNS) atau sistem nama domain yang dikenal sebagai Amazon Route 53. Layanan ini dapat membantu mengarahkan pelanggan ke lokasi web yang tepat dengan latensi rendah yang andal.
+Lalu, mungkin Anda akan bergumam, “Bisa nggak ya kalau kita ingin menggunakan layanan AWS langsung di dalam gedung milik sendiri?” Coba tebak.
+Tentu bisa. AWS dapat melakukannya untuk Anda.
+Perkenalkan, AWS Outposts. Dengan layanan ini, pada dasarnya, AWS akan menginstal Region mini yang beroperasi penuh, tepat di dalam data center Anda sendiri. Semua infrastruktur dan layanan tersebut dimiliki serta dioperasikan oleh AWS menggunakan 100% kegunaan AWS namun tetap terisolasi di dalam data center Anda.
+AWS Outposts bukanlah solusi yang dibutuhkan bagi sebagian besar pelanggan AWS. Tetapi, jika Anda memiliki masalah tertentu yang hanya dapat diselesaikan dengan tetap berada di dalam data center Anda sendiri, AWS Outposts dapat menjadi jalan keluarnya.
+
+ sebenarnya masih banyak yang dapat kita paparkan tentang infrastruktur global AWS. Meskipun demikian, mari kita buat bahasan ini tetap sederhana dan berakhir di sini saja. Jadi, berikut adalah poin kuncinya:
+
+*Region adalah wilayah yang terisolasi secara geografis di mana Anda dapat mengakses layanan yang diperlukan untuk menjalankan segala macam kebutuhan.
+*Region terdiri dari Availability Zone yang memungkinkan Anda untuk menjalankan seluruh bangunan data center yang terpisah secara fisik dengan jarak puluhan mil sambil menjaga aplikasi Anda tetap bersatu secara logis. Availability Zone membantu Anda untuk dapat mencapai high availability (ketersediaan tinggi) dan disaster recovery (pemulihan bencana) tanpa upaya apa pun dari Anda.
+*AWS Edge locations digunakan untuk menjalankan Amazon CloudFront sehingga dapat memperdekat konten kepada pelanggan Anda di mana pun mereka berada.
+
+#Cara Menyediakan Sumber Daya AWS
+API adalah application programming interface atau antarmuka pemrograman aplikasi.
+nda dapat memanggil API ini untuk menyediakan, mengonfigurasi, dan mengelola sumber daya AWS. Misal untuk meluncurkan EC2 instance atau membuat AWS Lambda function. Masing-masing akan menjadi permintaan dan panggilan API yang berbeda ke AWS.
+
+*AWS Management Console
+AWS Management Console adalah antarmuka berbasis browser yang dapat digunakan untuk mengakses dan mengelola layanan AWS. Melalui console (konsol), Anda dapat mengelola sumber daya AWS secara visual dan dengan cara yang mudah dipahami. 
+Dengan AWS Management Console, Anda dapat
+
+mencari layanan AWS dari nama, kata kunci, atau akronim;
+membangun lingkungan pengujian;
+melihat tagihan AWS;
+melakukan pemantauan; atau
+bekerja dengan sumber daya nonteknis lainnya.
+
+*AWS Command Line Interface
+CLI memungkinkan Anda untuk mengendalikan layanan AWS dengan baris perintah melalui satu alat. Jelas ini berbeda dengan gaya navigasi visual dari AWS Management Console. 
