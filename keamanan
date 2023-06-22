@@ -1,0 +1,45 @@
+Ada dua hal utama yang harus Anda perhatikan di shared responsibility model ini, yaitu:
+#AWS mengontrol security of the cloud (keamanan dari cloud).
+#Pelanggan mengontrol security in the cloud (keamanan di cloud).
+
+!Physical
+Bagian ini terdiri dari berbagai komponen keamanan fisik, seperti gedung, sumber daya listrik, instalasi jaringan, sistem pendingin, penjagaan keamanan, 
+dan lain sebagainya. Ini semua adalah tanggung jawab AWS.
+
+!Network & Hypervisor
+Kita tidak akan membahas secara mendalam tentang bagaimana area ini diamankan. Tetapi pada dasarnya, AWS telah mempersiapkan teknologi tersebut 
+dan membuatnya menjadi lebih cepat, lebih baik, lebih kuat, dan tahan kerusakan.
+
+!Operating System
+Dengan Amazon EC2, Anda bisa memilih sistem operasi yang ingin dijalankan. Ingat! AWS tidak memiliki akses sama sekali ke sistem Anda. 
+Hanya Anda yang memiliki akses untuk masuk ke sistem operasi yang Anda jalankan.
+
+!Application
+Di atas sistem operasi, Anda dapat menjalankan aplikasi apa pun yang diinginkan. Anda bertanggung jawab 100% untuk mengelolanya.
+
+!Data
+Data adalah bagian terpenting dan sepenuhnya menjadi ranah Anda untuk mengontrolnya. Anda bisa membuat data dapat diakses oleh semua orang, 
+beberapa orang, satu orang dengan kondisi tertentu, atau bahkan benar-benar menguncinya sehingga tidak ada yang dapat mengakses data tersebut.
+
+AWS Identity and Access Management (AWS IAM)
+AWS Identity and Access Management (AWS IAM) dapat membantu Anda untuk mengelola akses ke layanan dan sumber daya AWS dengan aman.
+IAM memberi Anda fleksibilitas untuk mengonfigurasi akses berdasarkan kebutuhan operasional dan keamanan yang spesifik. Di modul ini, kita akan membahas fitur-fitur 
+IAM, seperti:
+
+(IAM users)
+Di AWS Identity and Access Management (AWS IAM) Anda dapat membuat IAM users. Ia mewakili orang (personal) yang berinteraksi dengan layanan dan sumber daya AWS.
+IAM users secara default belum memiliki permission sama sekali. Ia tidak bisa masuk ke akun AWS, meluncurkan EC2 instance, atau bahkan membuat S3 bucket. 
+Intinya, secara default semua tindakan yang dilakukan oleh IAM users akan ditolak.
+
+(IAM policies)
+IAM policies adalah dokumen JSON yang mengizinkan atau menolak aktivitas tertentu terhadap layanan dan sumber daya AWS.
+
+(IAM groups)
+IAM groups adalah grup/kelompok yang berisi kumpulan dari user. Menariknya, Anda bisa melampirkan policy ke group sehingga semua user yang berada 
+di group tersebut akan memiliki permission yang sama.
+
+(IAM roles)
+IAM roles memiliki permission yang dapat mengizinkan tindakan tertentu yang dibutuhkan secara temporer atau sementara. 
+Role ini juga sebenarnya mirip dengan user, bedanya, ia tak memiliki credential (username dan password).
+IAM roles dapat Anda gunakan untuk memberikan akses sementara ke beberapa hal, seperti sumber daya AWS, user, eksternal user, aplikasi, bahkan layanan AWS lainnya.
+
