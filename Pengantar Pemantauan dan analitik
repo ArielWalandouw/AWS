@@ -1,0 +1,20 @@
+#Amazon CloudWatch (Keuntungan)
+
+-Akses ke semua metrik dari satu lokasi
+Anda dapat mengumpulkan metrik dan log dari semua sumber daya yang berjalan di AWS bahkan server yang berada di on-premise.
+
+-Visibilitas ke seluruh aplikasi, infrastruktur, dan layanan
+Dengan visibilitas ke seluruh sistem, Anda dapat mengorelasikan bahkan memvisualisasikan metrik dan log untuk menunjukkan sekaligus menyelesaikan masalah dengan cepat.
+
+-Mengurangi waktu MTTR dan mengurangi TCO
+MTTR (mean time to resolution) adalah rata-rata waktu untuk menyelesaikan suatu masalah, sementara TCO (total cost of ownership) adalah biaya kepemilikan.
+
+-Mengoptimalkan aplikasi dan sumber daya operasional
+Anda dapat menggabungkan metrik dari seluruh EC2 instance untuk memperoleh wawasan akan operasional dan penggunaannya.
+
+#AWS CloudTrail
+layanan audit API yang komprehensif. Dengan CloudTrail, Anda dapat melihat riwayat lengkap dari aktivitas pengguna dan panggilan 
+API untuk aplikasi maupun sumber daya Anda.
+
+#AWS Trusted Advisor
+layanan web yang memeriksa lingkungan AWS Anda dan memberikan rekomendasi secara real time sesuai dengan praktik terbaik AWS.
